@@ -324,28 +324,39 @@ export default function RulesPage() {
 
           {/* BOTTOM CTA */}
           <div className="mt-12 text-center">
-            <div className="inline-block bg-white border border-[rgba(200,134,10,0.15)] rounded-2xl px-8 py-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)]">
-              <p className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b8700a] mb-2" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>नामांकन की अंतिम तिथि</p>
-              <p className="rl-serif text-[#1a0800] mb-4" style={{ fontSize: 'clamp(20px, 4vw, 30px)' }}>20 मई 2026</p>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <Link
-                  href="/nominate"
-                  className="inline-flex items-center gap-2 text-white text-[13px] font-bold px-7 py-3 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-all duration-200 hover:-translate-y-0.5"
-                  style={{ background: cfg.numBg, fontFamily: 'Noto Sans Devanagari, sans-serif' }}
-                >
-                  <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor"><path d="M5 0L10 5L5 10L0 5Z" /></svg>
-                  नामांकन करें
-                </Link>
-                <a
-                  href="mailto:samratvikramadityasamman@gmail.com"
-                  className="inline-flex items-center gap-2 border text-[13px] font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:bg-[rgba(200,134,10,0.05)]"
-                  style={{ borderColor: `${cfg.amountColor}40`, color: cfg.amountColor, fontFamily: 'Noto Sans Devanagari, sans-serif' }}
-                >
-                  ईमेल करें
-                </a>
-              </div>
-            </div>
-          </div>
+  <div className="inline-block bg-white border border-[rgba(200,134,10,0.15)] rounded-2xl px-8 py-6 shadow-[0_4px_24px_rgba(0,0,0,0.05)]">
+    <p
+      className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b8700a] mb-2"
+      style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}
+    >
+      सूचना
+    </p>
+    <p
+      className="rl-serif text-[#1a0800] mb-2"
+      style={{ fontSize: 'clamp(18px, 3.2vw, 24px)', lineHeight: 1.3 }}
+    >
+      नामांकन की प्रक्रिया समाप्त हो चुकी है
+    </p>
+    <p
+      className="text-[13px] text-[#6a4010] mb-5 leading-relaxed max-w-md mx-auto"
+      style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}
+    >
+      अंतिम तिथि <strong>20 मई 2026</strong> थी। किसी भी प्रश्न अथवा जानकारी हेतु आप हमसे संपर्क कर सकते हैं।
+    </p>
+    <div className="flex flex-wrap gap-3 justify-center">
+      <a
+        href="mailto:samratvikramadityasamman@gmail.com"
+        className="inline-flex items-center gap-2 border text-[13px] font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:bg-[rgba(200,134,10,0.05)]"
+        style={{ borderColor: `${cfg.amountColor}40`, color: cfg.amountColor, fontFamily: 'Noto Sans Devanagari, sans-serif' }}
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="opacity-80">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        ईमेल करें
+      </a>
+    </div>
+  </div>
+</div>
 
         </div>
       </div>

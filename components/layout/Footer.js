@@ -15,32 +15,6 @@ export default function Footer() {
         .ftr-sans { font-family: 'Noto Sans Devanagari', sans-serif; }
         .ftr-serif { font-family: 'Noto Serif Devanagari', serif; }
 
-        @keyframes ftr-shine {
-          0% { transform: translateX(-120%); }
-          100% { transform: translateX(300%); }
-        }
-        .ftr-band-shine::after {
-          content: '';
-          position: absolute;
-          inset-y: 0; width: 30%;
-          background: linear-gradient(90deg, transparent, rgba(255,220,130,0.1), transparent);
-          animation: ftr-shine 4s ease-in-out infinite;
-        }
-
-        .ftr-cta-btn {
-          position: relative; overflow: hidden;
-          transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .ftr-cta-btn::before {
-          content: '';
-          position: absolute; top: 0; left: -80%;
-          width: 50%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
-          transition: left 0.5s ease;
-        }
-        .ftr-cta-btn:hover::before { left: 140%; }
-        .ftr-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(200,134,10,0.38) !important; }
-
         .ftr-award-row {
           transition: background 0.2s, border-color 0.2s;
         }
@@ -55,14 +29,14 @@ export default function Footer() {
         .ftr-contact-link:hover { color: #b8600a; }
       `}</style>
 
-      {/* ── Pre-footer CTA Band ───────────────────────────── */}
+      {/* ── Pre-footer Band — "Nominations Closed / Thank You" ───────── */}
       <div
-        className="ftr-band-shine ftr-sans relative overflow-hidden text-center px-6 py-16"
+        className="ftr-sans relative overflow-hidden text-center px-6 py-16"
         style={{ background: 'linear-gradient(135deg, #6b1414 0%, #8b2020 50%, #6b1414 100%)' }}
       >
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='rgba(200,134,10,0.07)' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: '40px 40px' }} />
 
-        <div className="relative z-10 max-w-xl mx-auto">
+        <div className="relative z-10 max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-[rgba(245,200,66,0.5)]" />
             <div className="w-2 h-2 bg-[#f5c842] rotate-45 opacity-80" />
@@ -70,32 +44,30 @@ export default function Footer() {
           </div>
 
           <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-[rgba(245,200,66,0.65)] mb-3">
-            महत्वपूर्ण सूचना
+            हार्दिक धन्यवाद
           </p>
           <h3
-            className="ftr-serif text-white mb-3"
+            className="ftr-serif text-white mb-4"
             style={{ fontSize: 'clamp(24px, 4vw, 36px)', lineHeight: 1.25 }}
           >
-            अपना नामांकन भेजें
+            नामांकन की प्रक्रिया समाप्त हो चुकी है
           </h3>
-          <p className="text-[15px] text-[rgba(253,232,192,0.78)] mb-6 leading-relaxed">
-            सम्राट विक्रमादित्य सम्मान 2026 के लिए योग्य व्यक्तियों एवं संस्थाओं से आमंत्रण
+          <p className="text-[15px] text-[rgba(253,232,192,0.82)] mb-6 leading-relaxed max-w-xl mx-auto">
+            सम्राट विक्रमादित्य सम्मान <strong className="text-[#ffe070]">2026</strong> हेतु नामांकन की अंतिम तिथि <strong className="text-[#ffe070]">20 मई 2026</strong> थी। आपकी रुचि एवं सहभागिता के लिए हम हृदय से आभारी हैं।
           </p>
 
-          <div className="inline-flex items-center gap-2 bg-[rgba(245,200,66,0.1)] border border-[rgba(245,200,66,0.35)] text-[#f5c842] text-[14px] font-semibold px-5 py-2.5 rounded-full mb-7">
-            नामांकन की अंतिम तिथि: <strong className="text-[#ffe070] font-bold">20 मई 2026</strong>
+          {/* ── Status pill (replaces deadline pill) ── */}
+          <div className="inline-flex items-center gap-2.5 bg-[rgba(245,200,66,0.08)] border border-[rgba(245,200,66,0.3)] text-[#f5c842] text-[13.5px] font-semibold px-5 py-2.5 rounded-full">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="opacity-90">
+              <circle cx="12" cy="12" r="10" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+            </svg>
+            प्राप्त नामांकनों की समीक्षा प्रक्रिया जारी है
           </div>
 
-          <div>
-            <Link
-              href="/nominate"
-              className="ftr-cta-btn inline-flex items-center gap-2.5 bg-gradient-to-br from-[#c8860a] via-[#e8a820] to-[#b07208] text-[#1a0c00] text-[14px] font-bold px-8 py-3.5 rounded-full shadow-[0_6px_28px_rgba(200,134,10,0.35)]"
-              style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}
-            >
-              <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor"><path d="M5 0L10 5L5 10L0 5Z" /></svg>
-              अभी नामांकन करें
-            </Link>
-          </div>
+          <p className="text-[13px] text-[rgba(253,232,192,0.62)] mt-6 leading-relaxed max-w-md mx-auto">
+            चयन एवं परिणाम संबंधी अद्यतन शीघ्र ही इसी वेबसाइट पर साझा किए जाएँगे।
+          </p>
         </div>
       </div>
 

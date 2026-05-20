@@ -206,95 +206,105 @@ export default function HomePage() {
         ═══════════════════════════════════════════════ */}
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0500]">
 
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{
-              backgroundImage: "url('/bg.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              transform: `translateY(${scrollY * 0.18}px) scale(1.05)`,
-              willChange: 'transform',
-            }}
-          />
+  <div
+    className="absolute inset-0 w-full h-full"
+    style={{
+      backgroundImage: "url('/bg.jpg')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      transform: `translateY(${scrollY * 0.18}px) scale(1.05)`,
+      willChange: 'transform',
+    }}
+  />
 
-          <div className="absolute inset-0 bg-[rgba(6,3,0,0.72)]" />
+  <div className="absolute inset-0 bg-[rgba(6,3,0,0.72)]" />
 
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 items-center">
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 items-center">
 
-            <div>
-              <div className="inline-flex items-center gap-2.5 bg-[rgba(200,134,10,0.12)] border border-[rgba(200,134,10,0.32)] px-4 py-1.5 rounded-full mb-7">
-                <span className="pg-dot-pulse w-[5px] h-[5px] rounded-full bg-[#f5c842] flex-shrink-0 inline-block" />
-                <span className="text-[11px] font-bold  uppercase text-[#f5c842]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>नामांकन आमंत्रण 2026</span>
+    <div>
+      {/* ── Status pill: was "नामांकन आमंत्रण 2026" with pulse ── */}
+      <div className="inline-flex items-center gap-2.5 bg-[rgba(200,134,10,0.12)] border border-[rgba(200,134,10,0.32)] px-4 py-1.5 rounded-full mb-7">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="2.5" className="flex-shrink-0 opacity-90">
+          <circle cx="12" cy="12" r="10" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+        </svg>
+        <span className="text-[11px] font-bold uppercase text-[#f5c842]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>सम्मान 2026 · नामांकन प्रक्रिया समाप्त</span>
+      </div>
+
+      <p className="text-[11px] font-semibold uppercase text-[rgba(245,200,66,0.55)] mb-5">
+        महाराजा विक्रमादित्य शोधपीठ · संस्कृति विभाग · म.प्र. शासन
+      </p>
+
+      <h1 className="pg-serif leading-[1.08] mb-5">
+        <span className="block text-white" style={{ fontSize: 'clamp(44px, 8vw, 90px)' }}>सम्राट</span>
+        <span className="block pt-6" style={{ fontSize: 'clamp(44px, 8vw, 90px)', background: 'linear-gradient(135deg, #f5d87a 0%, #e8a820 45%, #c8860a 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}> विक्रमादित्य</span>
+        <span className="block text-[rgba(255,240,200,0.78)] pg-sans font-semibold" style={{ fontSize: 'clamp(20px, 3vw, 30px)', marginTop: 6 }}>सम्मान 2026</span>
+      </h1>
+
+      <div className="inline-flex items-center gap-2 bg-[rgba(200,134,10,0.13)] border border-[rgba(200,134,10,0.28)] px-4 py-2 rounded-full mb-8">
+        <span className="text-[13px] font-medium text-[rgba(245,220,160,0.85)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+          विक्रम संवत् <strong className="text-[#f5c842] font-bold">2083</strong> · 19 मार्च 2026 से प्रारंभ
+        </span>
+      </div>
+
+      <p className="text-[15px] text-[rgba(255,235,195,0.72)] leading-relaxed max-w-xl mb-8 font-normal" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+        सम्राट विक्रमादित्य के गुणों न्याय, दानशीलता, शौर्य, कला एवं मानव कल्याण को जीवंत रखने के लिए दिया जाने वाला राष्ट्र का सर्वोच्च सम्मान।
+      </p>
+
+      <div className="flex flex-wrap gap-3.5">
+        <Link href="/about" className="inline-flex items-center gap-2 border border-[rgba(200,134,10,0.4)] text-[rgba(245,220,160,0.85)] hover:text-[#f5c842] hover:border-[rgba(200,134,10,0.7)] hover:bg-[rgba(200,134,10,0.09)] text-[13.5px] font-semibold px-6 py-3 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+          परिचय पढ़ें
+          <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        </Link>
+      </div>
+    </div>
+
+    <div className="relative flex mt-4 items-center justify-center">
+      <div className="relative w-full max-w-[380px] mx-auto">
+
+        <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-28 h-28 z-20">
+          <div className="pg-spin-slow absolute inset-[-4px] rounded-full opacity-60" style={{ background: 'conic-gradient(from 0deg, #c8860a, #f5c842, #9a6008, #c8860a)' }} />
+          <div className="absolute inset-[2px] rounded-full bg-[#1a0e04]" />
+          <img src="/vikram-coin.png" alt="सम्राट विक्रमादित्य" className="pg-float pg-coin-glow relative z-10 w-full h-full object-contain rounded-full p-2" />
+        </div>
+
+        <div className="pg-award-card bg-[rgba(255,253,247,0.06)] backdrop-blur-md border border-[rgba(200,134,10,0.3)] rounded-3xl pt-20 pb-7 px-7 mt-10" style={{ boxShadow: '0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(245,200,66,0.15)' }}>
+
+          <p className="text-center text-[10px] font-bold uppercase text-[rgba(245,200,66,0.6)] mb-5" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>पुरस्कार राशि</p>
+
+          <div className="space-y-3 mb-6">
+            {[
+              { level: 'अंतर्राष्ट्रीय', amount: '₹1 करोड़ 1 लाख', size: 'text-[22px]', accent: '#f5d87a' },
+              { level: 'राष्ट्रीय', amount: '₹21 लाख', size: 'text-[18px]', accent: '#e8a820' },
+              { level: 'शिखर सम्मान (×3)', amount: '₹5 लाख', size: 'text-[15px]', accent: '#c8860a' },
+            ].map((p, i) => (
+              <div key={i} className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(200,134,10,0.18)] hover:bg-[rgba(200,134,10,0.1)] hover:border-[rgba(200,134,10,0.38)] transition-all duration-200">
+                <span className="text-[12px] font-medium text-[rgba(255,235,195,0.7)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{p.level}</span>
+                <span className={`pg-serif font-bold ${p.size}`} style={{ color: p.accent }}>{p.amount}</span>
               </div>
-
-              <p className="text-[11px] font-semibold  uppercase text-[rgba(245,200,66,0.55)] mb-5">
-                महाराजा विक्रमादित्य शोधपीठ · संस्कृति विभाग · म.प्र. शासन
-              </p>
-
-              <h1 className="pg-serif leading-[1.08] mb-5">
-                <span className="block text-white" style={{ fontSize: 'clamp(44px, 8vw, 90px)' }}>सम्राट</span>
-                <span className="block pt-6" style={{ fontSize: 'clamp(44px, 8vw, 90px)', background: 'linear-gradient(135deg, #f5d87a 0%, #e8a820 45%, #c8860a 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}> विक्रमादित्य</span>
-                <span className="block text-[rgba(255,240,200,0.78)] pg-sans font-semibold" style={{ fontSize: 'clamp(20px, 3vw, 30px)', marginTop: 6 }}>सम्मान 2026</span>
-              </h1>
-
-              <div className="inline-flex items-center gap-2 bg-[rgba(200,134,10,0.13)] border border-[rgba(200,134,10,0.28)] px-4 py-2 rounded-full mb-8">
-                <span className="text-[13px] font-medium text-[rgba(245,220,160,0.85)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                  विक्रम संवत् <strong className="text-[#f5c842] font-bold">2083</strong> · 19 मार्च 2026 से प्रारंभ
-                </span>
-              </div>
-
-              <p className="text-[15px] text-[rgba(255,235,195,0.72)] leading-relaxed max-w-xl mb-8 font-normal" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                सम्राट विक्रमादित्य के गुणों न्याय, दानशीलता, शौर्य, कला एवं मानव कल्याण को जीवंत रखने के लिए दिया जाने वाला राष्ट्र का सर्वोच्च सम्मान।
-              </p>
-
-              <div className="flex flex-wrap gap-3.5">
-                <Link href="/about" className="inline-flex items-center gap-2 border border-[rgba(200,134,10,0.4)] text-[rgba(245,220,160,0.85)] hover:text-[#f5c842] hover:border-[rgba(200,134,10,0.7)] hover:bg-[rgba(200,134,10,0.09)] text-[13.5px] font-semibold px-6 py-3 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                  परिचय पढ़ें
-                  <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-[380px] mx-auto">
-
-                <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-28 h-28 z-20">
-                  <div className="pg-spin-slow absolute inset-[-4px] rounded-full opacity-60" style={{ background: 'conic-gradient(from 0deg, #c8860a, #f5c842, #9a6008, #c8860a)' }} />
-                  <div className="absolute inset-[2px] rounded-full bg-[#1a0e04]" />
-                  <img src="/vikram-coin.png" alt="सम्राट विक्रमादित्य" className="pg-float pg-coin-glow relative z-10 w-full h-full object-contain rounded-full p-2" />
-                </div>
-
-                <div className="pg-award-card bg-[rgba(255,253,247,0.06)] backdrop-blur-md border border-[rgba(200,134,10,0.3)] rounded-3xl pt-20 pb-7 px-7 mt-10" style={{ boxShadow: '0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(245,200,66,0.15)' }}>
-
-                  <p className="text-center text-[10px] font-bold uppercase text-[rgba(245,200,66,0.6)] mb-5" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>पुरस्कार राशि</p>
-
-                  <div className="space-y-3 mb-6">
-                    {[
-                      { level: 'अंतर्राष्ट्रीय', amount: '₹1 करोड़ 1 लाख', size: 'text-[22px]', accent: '#f5d87a' },
-                      { level: 'राष्ट्रीय', amount: '₹21 लाख', size: 'text-[18px]', accent: '#e8a820' },
-                      { level: 'शिखर सम्मान (×3)', amount: '₹5 लाख', size: 'text-[15px]', accent: '#c8860a' },
-                    ].map((p, i) => (
-                      <div key={i} className="flex items-center justify-between px-4 py-3 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(200,134,10,0.18)] hover:bg-[rgba(200,134,10,0.1)] hover:border-[rgba(200,134,10,0.38)] transition-all duration-200">
-                        <span className="text-[12px] font-medium text-[rgba(255,235,195,0.7)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{p.level}</span>
-                        <span className={`pg-serif font-bold ${p.size}`} style={{ color: p.accent }}>{p.amount}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-2.5">
-                    <Link href="/nominate" className="pg-cta-primary flex items-center justify-center gap-2.5 w-full bg-gradient-to-br from-[#b8600a] via-[#cf7610] to-[#9a4c06] text-white text-[13.5px] font-bold py-3.5 rounded-2xl shadow-[0_6px_28px_rgba(184,96,10,0.35)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                      <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" className="opacity-80"><path d="M5 0L10 5L5 10L0 5Z" /></svg>
-                      नामांकन करें
-                    </Link>
-                    <div className="text-center">
-                      <span className="text-[10.5px] text-[rgba(245,200,100,0.5)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>अंतिम तिथि: <strong className="text-[rgba(245,200,66,0.75)]">20 मई 2026</strong></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
+
+          {/* ── Status block: replaces nominate CTA + deadline ── */}
+          <div className="rounded-2xl border border-[rgba(200,134,10,0.28)] bg-[rgba(200,134,10,0.06)] px-4 py-4 text-center">
+            <div className="inline-flex items-center gap-2 mb-1.5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="2.4" className="opacity-90">
+                <circle cx="12" cy="12" r="10" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+              </svg>
+              <span className="text-[12.5px] font-bold text-[#f5c842]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+                नामांकन प्रक्रिया समाप्त
+              </span>
+            </div>
+            <p className="text-[10.5px] text-[rgba(245,200,100,0.6)] leading-relaxed" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+              अंतिम तिथि <strong className="text-[rgba(245,200,66,0.85)]">20 मई 2026</strong> थी · चयन प्रक्रिया जारी है
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ═══════════════════════════════════════════════
             FLOATING STATS organic, not a rigid bar
@@ -322,90 +332,86 @@ export default function HomePage() {
             AWARD CATEGORIES hierarchy layout
         ═══════════════════════════════════════════════ */}
         <section className="py-24 px-5 md:px-10 relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #1a0a02 0%, #2a1206 50%, #1a0a02 100%)' }}>
-          <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(200,134,10,0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(180,60,20,0.1) 0%, transparent 45%)' }} />
+  <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(200,134,10,0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(180,60,20,0.1) 0%, transparent 45%)' }} />
 
-          <div className="max-w-6xl mx-auto relative">
-            <div className="text-center mb-16">
-              <SectionLabel light>पुरस्कार श्रेणियाँ</SectionLabel>
-              <h2 className="pg-serif text-white" style={{ fontSize: 'clamp(30px, 5vw, 50px)' }}>सम्मान की श्रेणियाँ</h2>
-              <p className="text-[15px] text-[rgba(245,220,170,0.6)] max-w-lg mx-auto mt-4" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                सम्राट विक्रमादित्य के बहुविध गुणों में उत्कृष्ट योगदान हेतु
-              </p>
+  <div className="max-w-6xl mx-auto relative">
+    <div className="text-center mb-16">
+      <SectionLabel light>पुरस्कार श्रेणियाँ</SectionLabel>
+      <h2 className="pg-serif text-white" style={{ fontSize: 'clamp(30px, 5vw, 50px)' }}>सम्मान की श्रेणियाँ</h2>
+      <p className="text-[15px] text-[rgba(245,220,170,0.6)] max-w-lg mx-auto mt-4" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+        सम्राट विक्रमादित्य के बहुविध गुणों में उत्कृष्ट योगदान हेतु
+      </p>
+    </div>
+
+    {[
+      {
+        tier: 1, level: 'अंतर्राष्ट्रीय सम्मान', tag: 'श्रेणी I', amount: '₹1 करोड़ 1 लाख',
+        accentFrom: '#f5d87a', accentTo: '#c8860a',
+        trophyFile: '/trophy-international.png', trophyNote: 'अंतर्राष्ट्रीय ट्रॉफी',
+        trophySize: 'w-56 h-56',
+        cardBg: 'from-[rgba(200,134,10,0.14)] to-[rgba(200,134,10,0.05)]',
+        desc: 'विश्वस्तरीय योगदान न्याय, दानशीलता, सुशासन, खगोल विज्ञान, कला, शौर्य, राजनय, आध्यात्म, विश्व मानव कल्याण तथा भारतीय संस्कृति के उत्थान में।',
+      },
+      {
+        tier: 2, level: 'राष्ट्रीय सम्मान', tag: 'श्रेणी II', amount: '₹21 लाख',
+        accentFrom: '#e8a820', accentTo: '#a0500a',
+        trophyFile: '/trophy-national.png', trophyNote: 'राष्ट्रीय ट्रॉफी',
+        trophySize: 'w-44 h-44',
+        cardBg: 'from-[rgba(180,80,10,0.12)] to-[rgba(180,80,10,0.04)]',
+        desc: 'राष्ट्रीय स्तर पर सुशासन, शास्त्रीय साहित्य, खगोल विज्ञान, शौर्य, राजनय एवं जनकल्याण में असाधारण योगदान।',
+      },
+      {
+        tier: 3, level: 'शिखर सम्मान', tag: 'श्रेणी III (तीन)', amount: '₹5 लाख × 3',
+        accentFrom: '#d4820a', accentTo: '#6b3a1f',
+        trophyFile: '/trophy-shikhar.png', trophyNote: 'शिखर ट्रॉफी',
+        trophySize: 'w-36 h-36',
+        cardBg: 'from-[rgba(140,60,10,0.1)] to-[rgba(140,60,10,0.03)]',
+        desc: 'मध्यप्रदेश में कला, शौर्य, साहित्य, राजनय एवं सृजनात्मक जनकल्याण में उल्लेखनीय योगदान।',
+      },
+    ].map((a, i) => (
+      <div key={i} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 mb-10 last:mb-0`}>
+
+        <div className={`flex-shrink-0 flex items-center justify-center ${i === 0 ? 'md:w-72' : i === 1 ? 'md:w-60' : 'md:w-52'}`}>
+          <div className={`relative group ${a.trophySize}`}>
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle, rgba(200,134,10,0.2) 0%, transparent 70%)` }} />
+            <img
+              src={a.trophyFile}
+              alt={a.trophyNote}
+              className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-400"
+              style={{ filter: 'drop-shadow(0 16px 40px rgba(200,134,10,0.25))' }}
+              onError={e => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextSibling.style.display = 'flex';
+              }}
+            />
+            <div className="hidden flex-col items-center justify-center w-full h-full rounded-2xl border-2 border-dashed border-[rgba(200,134,10,0.3)] text-[rgba(200,134,10,0.5)] text-[11px] text-center p-4" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="mb-2 opacity-50"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>{a.trophyNote}</span>
+              <span className="opacity-60 text-[9px] mt-1">{a.trophyFile}</span>
             </div>
-
-            {[
-              {
-                tier: 1, level: 'अंतर्राष्ट्रीय सम्मान', tag: 'श्रेणी I', amount: '₹1 करोड़ 1 लाख',
-                accentFrom: '#f5d87a', accentTo: '#c8860a',
-                trophyFile: '/trophy-international.png', trophyNote: 'अंतर्राष्ट्रीय ट्रॉफी',
-                trophySize: 'w-56 h-56',
-                cardBg: 'from-[rgba(200,134,10,0.14)] to-[rgba(200,134,10,0.05)]',
-                desc: 'विश्वस्तरीय योगदान न्याय, दानशीलता, सुशासन, खगोल विज्ञान, कला, शौर्य, राजनय, आध्यात्म, विश्व मानव कल्याण तथा भारतीय संस्कृति के उत्थान में।',
-              },
-              {
-                tier: 2, level: 'राष्ट्रीय सम्मान', tag: 'श्रेणी II', amount: '₹21 लाख',
-                accentFrom: '#e8a820', accentTo: '#a0500a',
-                trophyFile: '/trophy-national.png', trophyNote: 'राष्ट्रीय ट्रॉफी',
-                trophySize: 'w-44 h-44',
-                cardBg: 'from-[rgba(180,80,10,0.12)] to-[rgba(180,80,10,0.04)]',
-                desc: 'राष्ट्रीय स्तर पर सुशासन, शास्त्रीय साहित्य, खगोल विज्ञान, शौर्य, राजनय एवं जनकल्याण में असाधारण योगदान।',
-              },
-              {
-                tier: 3, level: 'शिखर सम्मान', tag: 'श्रेणी III (तीन)', amount: '₹5 लाख × 3',
-                accentFrom: '#d4820a', accentTo: '#6b3a1f',
-                trophyFile: '/trophy-shikhar.png', trophyNote: 'शिखर ट्रॉफी',
-                trophySize: 'w-36 h-36',
-                cardBg: 'from-[rgba(140,60,10,0.1)] to-[rgba(140,60,10,0.03)]',
-                desc: 'मध्यप्रदेश में कला, शौर्य, साहित्य, राजनय एवं सृजनात्मक जनकल्याण में उल्लेखनीय योगदान।',
-              },
-            ].map((a, i) => (
-              <div key={i} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 mb-10 last:mb-0`}>
-
-                <div className={`flex-shrink-0 flex items-center justify-center ${i === 0 ? 'md:w-72' : i === 1 ? 'md:w-60' : 'md:w-52'}`}>
-                  <div className={`relative group ${a.trophySize}`}>
-                    <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle, rgba(200,134,10,0.2) 0%, transparent 70%)` }} />
-                    <img
-                      src={a.trophyFile}
-                      alt={a.trophyNote}
-                      className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-400"
-                      style={{ filter: 'drop-shadow(0 16px 40px rgba(200,134,10,0.25))' }}
-                      onError={e => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    <div className="hidden flex-col items-center justify-center w-full h-full rounded-2xl border-2 border-dashed border-[rgba(200,134,10,0.3)] text-[rgba(200,134,10,0.5)] text-[11px] text-center p-4" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="mb-2 opacity-50"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                      <span>{a.trophyNote}</span>
-                      <span className="opacity-60 text-[9px] mt-1">{a.trophyFile}</span>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style={{ background: `linear-gradient(135deg, ${a.accentFrom}, ${a.accentTo})`, color: '#1a0a00', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
-                      {a.tier}
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`flex-1 pg-award-card bg-gradient-to-br ${a.cardBg} border border-[rgba(200,134,10,0.18)] rounded-3xl p-7 md:p-8`} style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
-                    <div>
-                      <span className="inline-block text-[9.5px] font-bold  uppercase px-3 py-1 rounded-full mb-3" style={{ background: 'rgba(200,134,10,0.15)', color: a.accentFrom, border: `1px solid ${a.accentTo}40`, fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{a.tag}</span>
-                      <h3 className="pg-serif leading-snug" style={{ fontSize: i === 0 ? 28 : i === 1 ? 24 : 20, background: `linear-gradient(135deg, ${a.accentFrom}, ${a.accentTo})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{a.level}</h3>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-[9px] font-bold  uppercase text-[rgba(245,200,100,0.5)] mb-1" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>पुरस्कार राशि</p>
-                      <p className="pg-serif" style={{ fontSize: i === 0 ? 30 : i === 1 ? 24 : 20, color: a.accentFrom, lineHeight: 1 }}>{a.amount}</p>
-                    </div>
-                  </div>
-                  <p className="text-[13.5px] text-[rgba(245,225,190,0.72)] leading-relaxed mb-6" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{a.desc}</p>
-                  <Link href="/nominate" className="pg-cta-primary inline-flex items-center gap-2 bg-gradient-to-r from-[rgba(200,134,10,0.25)] to-[rgba(200,134,10,0.1)] border border-[rgba(200,134,10,0.35)] text-[rgba(245,210,140,0.9)] hover:text-white text-[12.5px] font-bold px-5 py-2.5 rounded-full transition-colors duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                    नामांकन करें
-                    <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
+            <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style={{ background: `linear-gradient(135deg, ${a.accentFrom}, ${a.accentTo})`, color: '#1a0a00', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+              {a.tier}
+            </div>
           </div>
-        </section>
+        </div>
+
+        <div className={`flex-1 pg-award-card bg-gradient-to-br ${a.cardBg} border border-[rgba(200,134,10,0.18)] rounded-3xl p-7 md:p-8`} style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div>
+              <span className="inline-block text-[9.5px] font-bold uppercase px-3 py-1 rounded-full mb-3" style={{ background: 'rgba(200,134,10,0.15)', color: a.accentFrom, border: `1px solid ${a.accentTo}40`, fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{a.tag}</span>
+              <h3 className="pg-serif leading-snug" style={{ fontSize: i === 0 ? 28 : i === 1 ? 24 : 20, background: `linear-gradient(135deg, ${a.accentFrom}, ${a.accentTo})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{a.level}</h3>
+            </div>
+            <div className="text-right">
+              <p className="text-[9px] font-bold uppercase text-[rgba(245,200,100,0.5)] mb-1" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>पुरस्कार राशि</p>
+              <p className="pg-serif" style={{ fontSize: i === 0 ? 30 : i === 1 ? 24 : 20, color: a.accentFrom, lineHeight: 1 }}>{a.amount}</p>
+            </div>
+          </div>
+          <p className="text-[13.5px] text-[rgba(245,225,190,0.72)] leading-relaxed" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{a.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
         {/* ═══════════════════════════════════════════════
             VIKRAMADITYA LEGACY redesigned, not boring
@@ -594,47 +600,46 @@ export default function HomePage() {
             CONTACT / NOMINATION CTA
         ═══════════════════════════════════════════════ */}
         <section className="py-24 px-5 md:px-10 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #faefd0 0%, #fdf6e3 50%, #faefd0 100%)' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(200,134,10,0.08) 0%, transparent 50%), radial-gradient(circle at 85% 20%, rgba(180,60,20,0.06) 0%, transparent 40%)' }} />
+  <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(200,134,10,0.08) 0%, transparent 50%), radial-gradient(circle at 85% 20%, rgba(180,60,20,0.06) 0%, transparent 40%)' }} />
 
-          <div className="max-w-3xl mx-auto text-center relative">
-            <SectionLabel>अंतिम तिथि से पूर्व</SectionLabel>
-            <h2 className="pg-serif text-[#1a0800] mb-2" style={{ fontSize: 'clamp(28px, 5vw, 46px)' }}>अभी नामांकन करें</h2>
-            <p className="pg-serif mb-2" style={{ fontSize: 'clamp(22px, 4vw, 36px)', background: 'linear-gradient(135deg, #b8600a, #d4820a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>सम्मान 2026</p>
-            <GoldDivider />
+  <div className="max-w-3xl mx-auto text-center relative">
+    <SectionLabel>अद्यतन</SectionLabel>
+    <h2 className="pg-serif text-[#1a0800] mb-2" style={{ fontSize: 'clamp(28px, 5vw, 46px)' }}>नामांकन की प्रक्रिया समाप्त</h2>
+    <p className="pg-serif mb-2" style={{ fontSize: 'clamp(22px, 4vw, 36px)', background: 'linear-gradient(135deg, #b8600a, #d4820a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>सम्मान 2026</p>
+    <GoldDivider />
 
-            <p className="text-[14.5px] text-[#6a4010] leading-loose mb-10" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-              {/* संबंधित व्यक्ति अथवा संस्था का पृथक-पृथक उल्लेख करते हुए स्पष्ट अनुशंसाएँ नीचे उल्लिखित पते पर <strong className="text-[#9a4008] font-bold">20 मई 2026</strong> तक भेजना आमंत्रित हैं। */}
-            </p>
+    <p className="text-[14.5px] text-[#6a4010] leading-loose mb-3 mt-2" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+      सम्राट विक्रमादित्य सम्मान <strong className="text-[#9a4008] font-bold">2026</strong> हेतु नामांकन की अंतिम तिथि <strong className="text-[#9a4008] font-bold">20 मई 2026</strong> थी। आपकी सहभागिता एवं रुचि के लिए हम हृदय से आभारी हैं।
+    </p>
+    <p className="text-[13.5px] text-[#8a5018] leading-loose mb-10" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+      प्राप्त नामांकनों की समीक्षा एवं चयन प्रक्रिया जारी है। किसी भी प्रश्न अथवा जानकारी हेतु आप नीचे दिए माध्यमों से संपर्क कर सकते हैं।
+    </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-10 text-left">
-              {[
-                { l: 'पता', v: 'निदेशक, महाराजा विक्रमादित्य शोधपीठ\nरवीन्द्र भवन परिसर, प्रथम तल, भोपाल', href: null },
-                { l: 'ईमेल', v: 'samratvikramadityasamman@gmail.com', href: 'mailto:samratvikramadityasamman@gmail.com' },
-                { l: 'दूरभाष', v: '0755-4535064', href: 'tel:07554535064' },
-                { l: 'वेबसाइट', v: 'awards.mvspujjain.com', href: 'https://awards.mvspujjain.com', ext: true },
-              ].map(item => (
-                <div key={item.l} className="group bg-white border border-[rgba(200,134,10,0.14)] rounded-2xl px-5 py-4 hover:shadow-[0_12px_40px_rgba(180,100,10,0.1)] hover:-translate-y-1 transition-all duration-200">
-                  <p className="text-[9.5px] font-bold  uppercase text-[#b8880a] mb-1.5" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.l}</p>
-                  {item.href ? (
-                    <a href={item.href} target={item.ext ? '_blank' : undefined} rel={item.ext ? 'noopener noreferrer' : undefined} className="text-[13.5px] font-semibold text-[#9a4008] hover:text-[#b8600a] transition-colors" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.v}</a>
-                  ) : (
-                    <p className="text-[13px] text-[#3a2000] font-medium whitespace-pre-line" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.v}</p>
-                  )}
-                </div>
-              ))}
-            </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-10 text-left">
+      {[
+        { l: 'पता', v: 'निदेशक, महाराजा विक्रमादित्य शोधपीठ\nरवीन्द्र भवन परिसर, प्रथम तल, भोपाल', href: null },
+        { l: 'ईमेल', v: 'samratvikramadityasamman@gmail.com', href: 'mailto:samratvikramadityasamman@gmail.com' },
+        { l: 'दूरभाष', v: '0755-4535064', href: 'tel:07554535064' },
+        { l: 'वेबसाइट', v: 'awards.mvspujjain.com', href: 'https://awards.mvspujjain.com', ext: true },
+      ].map(item => (
+        <div key={item.l} className="group bg-white border border-[rgba(200,134,10,0.14)] rounded-2xl px-5 py-4 hover:shadow-[0_12px_40px_rgba(180,100,10,0.1)] hover:-translate-y-1 transition-all duration-200">
+          <p className="text-[9.5px] font-bold uppercase text-[#b8880a] mb-1.5" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.l}</p>
+          {item.href ? (
+            <a href={item.href} target={item.ext ? '_blank' : undefined} rel={item.ext ? 'noopener noreferrer' : undefined} className="text-[13.5px] font-semibold text-[#9a4008] hover:text-[#b8600a] transition-colors" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.v}</a>
+          ) : (
+            <p className="text-[13px] text-[#3a2000] font-medium whitespace-pre-line" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>{item.v}</p>
+          )}
+        </div>
+      ))}
+    </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/nominate" className="pg-cta-primary inline-flex items-center gap-2.5 text-white text-[13.5px] font-bold px-8 py-3.5 rounded-full shadow-[0_6px_24px_rgba(123,30,30,0.28)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif', background: 'linear-gradient(135deg, #7b1e1e 0%, #9c2a2a 55%, #6b1414 100%)' }}>
-                <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" className="opacity-75"><path d="M5 0L10 5L5 10L0 5Z" /></svg>
-                नामांकन प्रारंभ करें
-              </Link>
-              <Link href="/rules" className="inline-flex items-center gap-2 border border-[rgba(180,96,10,0.3)] text-[#7a4010] hover:border-[rgba(180,96,10,0.6)] hover:bg-[rgba(200,134,10,0.06)] text-[13px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                नियमावली पढ़ें
-              </Link>
-            </div>
-          </div>
-        </section>
+    <div className="flex flex-wrap gap-4 justify-center">
+      <Link href="/rules" className="inline-flex items-center gap-2 border border-[rgba(180,96,10,0.3)] text-[#7a4010] hover:border-[rgba(180,96,10,0.6)] hover:bg-[rgba(200,134,10,0.06)] text-[13px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+        नियमावली पढ़ें
+      </Link>
+    </div>
+  </div>
+</section>
 
       </div>
     </>

@@ -498,33 +498,29 @@ export default function AboutPage() {
             CTA NOMINATE
         ══════════════════════════════════════════ */}
         <section className="py-24 px-5 md:px-10 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #fdf8ee 0%, #fffcf4 60%, #fef4dc 100%)' }}>
-          <div className="absolute inset-0 pointer-events-none opacity-100" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26 L26 0 L52 26 L26 52Z' stroke='%23c8860a' stroke-width='0.5' fill='none' opacity='0.05'/%3E%3C/svg%3E")`, backgroundSize: '52px 52px' }} />
-
-          <div className="max-w-2xl mx-auto text-center relative">
-            <SectionLabel>विरासत को आगे बढ़ाइए</SectionLabel>
-            <h2 className="ab-serif text-[#1a0800] mb-2 leading-snug" style={{ fontSize: 'clamp(28px, 5vw, 48px)', paddingTop: '0.05em' }}>
-              नामांकन करें
-            </h2>
-            <p className="ab-serif mb-2" style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', background: 'linear-gradient(135deg, #b8600a, #e8a820)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              सम्मान 2026
-            </p>
-            <GoldDivider />
-
-            <p className="text-[14.5px] text-[#6a4010] leading-loose mb-10 mt-2" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-              क्या आप किसी ऐसे व्यक्ति या संस्था को जानते हैं जिनका कार्य विक्रमादित्य के शाश्वत गुणों को मूर्त रूप देता है? नामांकन विश्वभर के व्यक्तियों और संस्थाओं के लिए खुला है।
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/nominate" className="ab-cta-shine inline-flex items-center justify-center gap-2.5 text-white text-[13.5px] font-bold px-9 py-4 rounded-full shadow-[0_8px_32px_rgba(123,30,30,0.28)]" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif', background: 'linear-gradient(135deg, #7b1e1e 0%, #9c2a2a 55%, #6b1414 100%)' }}>
-                <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor" className="opacity-80"><path d="M5 0L10 5L5 10L0 5Z" /></svg>
-                नामांकन प्रारंभ करें
-              </Link>
-              <Link href="/rules" className="inline-flex items-center justify-center gap-2 border border-[rgba(180,96,10,0.3)] text-[#7a4010] hover:border-[rgba(180,96,10,0.6)] hover:bg-[rgba(200,134,10,0.06)] text-[13px] font-semibold px-8 py-4 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
-                नियमावली पढ़ें
-              </Link>
-            </div>
-          </div>
-        </section>
+  <div className="absolute inset-0 pointer-events-none opacity-100" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26 L26 0 L52 26 L26 52Z' stroke='%23c8860a' stroke-width='0.5' fill='none' opacity='0.05'/%3E%3C/svg%3E")`, backgroundSize: '52px 52px' }} />
+  <div className="max-w-2xl mx-auto text-center relative">
+    <SectionLabel>हार्दिक धन्यवाद</SectionLabel>
+    <h2 className="ab-serif text-[#1a0800] mb-2 leading-snug" style={{ fontSize: 'clamp(28px, 5vw, 48px)', paddingTop: '0.05em' }}>
+      नामांकन की प्रक्रिया समाप्त
+    </h2>
+    <p className="ab-serif mb-2" style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', background: 'linear-gradient(135deg, #b8600a, #e8a820)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+      सम्मान 2026
+    </p>
+    <GoldDivider />
+    <p className="text-[14.5px] text-[#6a4010] leading-loose mb-4 mt-2" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+      सम्राट विक्रमादित्य सम्मान <strong>2026</strong> हेतु नामांकन की अंतिम तिथि <strong>20 मई 2026</strong> थी। विश्वभर से प्राप्त नामांकनों एवं आपकी सहभागिता के लिए हम हृदय से आभारी हैं।
+    </p>
+    <p className="text-[13.5px] text-[#8a5018] leading-loose mb-10" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+      प्राप्त नामांकनों की समीक्षा प्रक्रिया जारी है। चयन एवं परिणाम संबंधी अद्यतन शीघ्र ही साझा किए जाएँगे।
+    </p>
+    <div className="flex justify-center">
+      <Link href="/rules" className="inline-flex items-center justify-center gap-2 border border-[rgba(180,96,10,0.3)] text-[#7a4010] hover:border-[rgba(180,96,10,0.6)] hover:bg-[rgba(200,134,10,0.06)] text-[13px] font-semibold px-8 py-4 rounded-full transition-all duration-200" style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}>
+        नियमावली पढ़ें
+      </Link>
+    </div>
+  </div>
+</section>
 
       </div>
     </>

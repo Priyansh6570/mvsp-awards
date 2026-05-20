@@ -18,12 +18,12 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
+  // ─── Nav links: removed /download-forms and /nomination_guide
+  //     since nomination phase is over.
   const navLinks = [
     { href: '/', label: 'होम' },
     { href: '/about', label: 'परिचय' },
     { href: '/rules', label: 'नियमावली' },
-    { href: '/download-forms', label: 'प्रपत्र डाउनलोड' },
-    { href: '/nomination_guide', label: 'नामांकन सहायिका' },
   ];
 
   return (
@@ -33,25 +33,6 @@ export default function Header() {
 
         .hdr-font { font-family: 'Noto Sans Devanagari', sans-serif; }
         .hdr-serif { font-family: 'Noto Serif Devanagari', serif; }
-
-        @keyframes hdr-sweep {
-          0% { transform: translateX(-120%); }
-          100% { transform: translateX(300%); }
-        }
-        .hdr-bar-shine::after {
-          content: '';
-          position: absolute;
-          inset-y: 0;
-          width: 30%;
-          background: linear-gradient(90deg, transparent, rgba(255,220,130,0.12), transparent);
-          animation: hdr-sweep 4s ease-in-out infinite;
-        }
-
-        @keyframes hdr-pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.3; transform: scale(0.65); }
-        }
-        .hdr-dot-pulse { animation: hdr-pulse 2.2s ease-in-out infinite; }
 
         @keyframes hdr-spin {
           to { transform: rotate(360deg); }
@@ -84,21 +65,23 @@ export default function Header() {
         .hdr-nav-link:hover { color: #b8600a; background: rgba(184,96,10,0.05); }
         .hdr-nav-link:hover::after { transform: scaleX(1); }
 
-        .hdr-cta {
-          position: relative;
-          overflow: hidden;
-          transition: transform 0.2s, box-shadow 0.2s;
+        /* ── Disabled / informational badge replacing the old CTA ── */
+        .hdr-closed-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(120, 70, 20, 0.08);
+          border: 1px solid rgba(120, 70, 20, 0.22);
+          color: #6a4010;
+          font-family: 'Noto Sans Devanagari', sans-serif;
+          font-size: 12.5px;
+          font-weight: 700;
+          padding: 9px 18px;
+          border-radius: 3px;
+          letter-spacing: 0.02em;
+          cursor: default;
+          user-select: none;
         }
-        .hdr-cta::before {
-          content: '';
-          position: absolute;
-          top: 0; left: -80%;
-          width: 50%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-          transition: left 0.5s ease;
-        }
-        .hdr-cta:hover::before { left: 140%; }
-        .hdr-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(184,96,10,0.38) !important; }
 
         .hdr-drawer-panel {
           transform: translateX(100%);
@@ -130,16 +113,16 @@ export default function Header() {
         .goog-logo-link, .goog-te-gadget > span { display: none !important; }
       `}</style>
 
-      {/* ── Announcement Bar ── */}
-      <div className="hdr-font hdr-bar-shine relative overflow-hidden bg-gradient-to-r from-[#6b1414] via-[#8b2020] to-[#6b1414] text-[#fde8c0] py-[7px] px-4 text-center text-[11.5px] font-medium">
+      {/* ── Announcement Bar — now a calm "closed" notice ── */}
+      <div className="hdr-font relative overflow-hidden bg-[#3a1a08] text-[#fde8c0] py-[7px] px-4 text-center text-[11.5px] font-medium">
         <span className="relative z-10 inline-flex items-center justify-center gap-2.5 flex-wrap">
-          नामांकन की अंतिम तिथि
-          <span className="hdr-dot-pulse inline-block w-[5px] h-[5px] rounded-full bg-[#f5c842] flex-shrink-0" />
-          <strong className="text-[#f5c842] font-bold">20 मई 2026</strong>
-          <span className="hdr-dot-pulse inline-block w-[5px] h-[5px] rounded-full bg-[#f5c842] flex-shrink-0" />
-          <Link href="/nominate" className="underline underline-offset-2 decoration-[rgba(253,232,192,0.35)] hover:text-white transition-colors duration-200">
-            अभी नामांकन करें →
-          </Link>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="flex-shrink-0 opacity-80">
+            <circle cx="12" cy="12" r="10" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01" />
+          </svg>
+          सम्राट विक्रमादित्य सम्मान 2026 हेतु
+          <strong className="text-[#f5c842] font-bold">नामांकन की प्रक्रिया समाप्त</strong>
+          हो चुकी है · आपके सहयोग हेतु धन्यवाद
         </span>
       </div>
 
@@ -190,17 +173,17 @@ export default function Header() {
             {/* Translate widget */}
             <div id="google_translate_element" />
 
-            {/* Nominate CTA */}
-            <Link
-              href="/nominate"
-              className="hdr-cta hidden lg:inline-flex items-center gap-2 bg-gradient-to-br from-[#b8600a] via-[#cf7610] to-[#9a4c06] text-white text-[12.5px] font-bold px-5 py-[9px] rounded-[3px] shadow-[0_4px_18px_rgba(184,96,10,0.28)]"
-              style={{ fontFamily: 'Noto Sans Devanagari, sans-serif', letterSpacing: '0.02em' }}
+            {/* ── Replaced CTA with informational badge ── */}
+            {/* <span
+              className="hdr-closed-badge hidden lg:inline-flex"
+              title="नामांकन की प्रक्रिया समाप्त हो चुकी है"
+              aria-label="नामांकन समाप्त"
             >
-              <svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor" className="flex-shrink-0 opacity-80">
-                <path d="M5 0L10 5L5 10L0 5Z" />
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="opacity-70">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              नामांकन करें
-            </Link>
+              नामांकन समाप्त
+            </span> */}
 
             {/* Hamburger */}
             <button
@@ -259,17 +242,16 @@ export default function Header() {
 
             <div className="my-3 h-px bg-gradient-to-r from-transparent via-[rgba(200,134,10,0.22)] to-transparent" />
 
-            <Link
-              href="/nominate"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 py-3.5 rounded-[3px] bg-gradient-to-br from-[#b8600a] via-[#cf7610] to-[#9a4c06] text-white text-[13px] font-bold shadow-[0_4px_16px_rgba(184,96,10,0.25)]"
-              style={{ fontFamily: 'Noto Sans Devanagari, sans-serif' }}
+            {/* ── Mobile: closed-state notice instead of CTA ── */}
+            <div
+              className="flex items-center justify-center gap-2 py-3.5 rounded-[3px] border border-[rgba(120,70,20,0.22)] bg-[rgba(120,70,20,0.05)] text-[#6a4010] text-[12.5px] font-bold"
+              style={{ fontFamily: 'Noto Sans Devanagari, sans-serif', letterSpacing: '0.02em' }}
             >
-              <svg width="7" height="7" viewBox="0 0 10 10" fill="currentColor">
-                <path d="M5 0L10 5L5 10L0 5Z" />
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="opacity-70">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              अभी नामांकन करें
-            </Link>
+              नामांकन प्रक्रिया समाप्त
+            </div>
           </nav>
 
           <div className="px-5 py-3 border-t border-[rgba(200,134,10,0.08)] text-center text-[9px] tracking-[0.16em] uppercase text-[#c8a870] font-medium"
